@@ -1,8 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
-
-    background-image: url('../imges/background.jpg');
+    background-image: url('../images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
