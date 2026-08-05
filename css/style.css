@@ -1,277 +1,486 @@
 body {
+
     margin: 0;
+
     min-height: 100vh;
 
     background-image: url("../imges/background.jpg");
+
     background-size: cover;
+
     background-position: center;
+
     background-repeat: no-repeat;
 
+
     font-family: 'Lato', sans-serif;
+
 }
 
 
-/* Main homepage section */
+
+
+
 .hero {
+
 
     height: 100vh;
 
+
     display: flex;
+
     flex-direction: column;
+
+
     justify-content: center;
+
     align-items: center;
 
+
     color: white;
+
+
     text-align: center;
+
+
 }
 
 
-/* Horizontal lines */
+
+
 .line {
 
+
     width: 900px;
+
     max-width: 80%;
+
 
     height: 4px;
 
+
     background: white;
 
+
     margin: 20px 0;
+
+
 }
 
 
-/* Name */
+
+
+
 h1 {
+
 
     margin: 15px 0;
 
+
     font-size: 5rem;
+
 
     font-weight: 700;
 
+
     letter-spacing: 3px;
 
+
     text-transform: uppercase;
+
+
 }
 
 
-/* Description text */
+
+
 p {
 
-    margin: 5px 0;
+
+    margin: 8px 0;
+
 
     font-size: 2rem;
 
+
     font-weight: 300;
+
+
 }
 
 
 
-/* =========================
-   CV BUTTON
-========================= */
 
-.cv-button {
+
+/* Buttons */
+
+
+.buttons {
+
+
+    display: flex;
+
+
+    gap: 25px;
+
 
     margin-top: 25px;
 
+
+}
+
+
+
+.cv-button {
+
+
     padding: 12px 40px;
+
 
     background: white;
 
+
     color: black;
+
 
     border: none;
 
+
     border-radius: 5px;
+
 
     cursor: pointer;
 
+
     font-family: inherit;
+
 
     font-size: 1.2rem;
 
-    transition: 0.3s ease;
+
+    transition: 0.3s;
+
+
 }
+
 
 
 .cv-button:hover {
 
+
     transform: scale(1.05);
+
 
 }
 
 
 
-/* =========================
-   CV POPUP BACKGROUND
-========================= */
+
+
+/* Popup background */
+
 
 .cv-modal {
 
+
     display: none;
+
 
     position: fixed;
 
+
     z-index: 9999;
 
-    left: 0;
-    top: 0;
 
-    width: 100%;
-    height: 100%;
+    left:0;
+
+    top:0;
+
+
+    width:100%;
+
+
+    height:100%;
 
 
     background: rgba(0,0,0,0.45);
 
+
     backdrop-filter: blur(8px);
 
-    justify-content: center;
 
-    align-items: center;
+    justify-content:center;
+
+
+    align-items:center;
+
 
 }
 
 
 
-/* =========================
-   CV WINDOW
-========================= */
+
+
+/* CV window */
+
 
 .cv-box {
 
-    width: 85%;
 
-    height: 90%;
-
-
-    background: white;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    position: relative;
+    width:85%;
 
 
-    animation: cvOpen 0.3s ease;
+    height:90%;
+
+
+    background:white;
+
+
+    border-radius:12px;
+
+
+    overflow:hidden;
+
+
+    position:relative;
+
+
+    animation:openBox .3s ease;
+
 
 }
 
 
 
-/* PDF viewer */
 
 .cv-box iframe {
 
-    width: 100%;
 
-    height: 100%;
+    width:100%;
 
-    border: none;
+
+    height:100%;
+
+
+    border:none;
+
 
 }
 
 
 
-/* Open animation */
 
-@keyframes cvOpen {
 
-    from {
+/* About window */
 
-        transform: scale(0.85);
 
-        opacity: 0;
+.about-box {
 
-    }
 
-    to {
+    width:70%;
 
-        transform: scale(1);
 
-        opacity: 1;
+    max-height:90%;
 
-    }
+
+    overflow:auto;
+
+
+    background:white;
+
+
+    border-radius:12px;
+
+
+    padding:40px;
+
+
+    position:relative;
+
+
+    text-align:center;
+
+
+    color:black;
+
+
+    animation:openBox .3s ease;
+
 
 }
 
 
 
-/* =========================
-   CLOSE BUTTON
-========================= */
+
+.profile-image {
+
+
+    width:220px;
+
+
+    height:220px;
+
+
+    object-fit:cover;
+
+
+    border-radius:50%;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+.about-text p {
+
+
+    font-size:1.2rem;
+
+
+    line-height:1.6;
+
+
+    font-weight:400;
+
+
+}
+
+
+
+
 
 .close-button {
 
-    position: absolute;
 
-    right: 15px;
-
-    top: 15px;
+    position:absolute;
 
 
-    z-index: 10;
+    right:15px;
 
 
-    width: 40px;
-
-    height: 40px;
+    top:15px;
 
 
-    border-radius: 50%;
-
-    border: none;
+    width:40px;
 
 
-    background: white;
+    height:40px;
 
 
-    cursor: pointer;
+    border-radius:50%;
 
 
-    font-size: 20px;
+    border:none;
 
-    line-height: 40px;
+
+    cursor:pointer;
+
+
+    font-size:20px;
+
 
 }
 
 
 
-/* =========================
-   MOBILE VERSION
-========================= */
 
-@media (max-width: 768px) {
+
+@keyframes openBox {
+
+
+    from {
+
+        transform:scale(.85);
+
+        opacity:0;
+
+    }
+
+
+    to {
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:768px){
 
 
     h1 {
 
-        font-size: 3rem;
+        font-size:3rem;
 
     }
 
 
-    p {
 
-        font-size: 1.3rem;
+    .hero p {
+
+        font-size:1.2rem;
 
     }
+
+
+
+    .buttons {
+
+        flex-direction:column;
+
+    }
+
 
 
     .cv-box {
 
-        width: 95%;
 
-        height: 85%;
+        width:95%;
+
+
+        height:85%;
+
+
+    }
+
+
+
+    .about-box {
+
+
+        width:90%;
+
+
+        padding:25px;
+
 
     }
 
 
-    .line {
 
-        width: 80%;
+    .profile-image {
+
+
+        width:160px;
+
+
+        height:160px;
+
 
     }
+
+
 
 }
