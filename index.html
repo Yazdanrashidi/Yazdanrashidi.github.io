@@ -25,23 +25,44 @@
 
         <div class="line"></div>
         
-        <!-- CV Button -->
-        <a href="#cv" class="cv-button">
+       <!-- CV Button -->
+       <button class="cv-button" onclick="openCV()">
             CV
-        </a>
-        <!-- CV Display Box -->
-        <div id="cv" class="cv-container">
+       </button>
 
-            <iframe 
-                src="documents/CV_YazdanRashidi.pdf"
-                title="Yazdan Rashidi CV">
-            </iframe>
 
-        </div>
+       <!-- CV Popup -->
+       <div id="cvModal" class="cv-modal">
+
+           <div class="cv-box">
+
+               <button class="close-button" onclick="closeCV()">
+                    ✕
+               </button>
+
+               <iframe 
+                  src="documents/CV_YazdanRashidi.pdf">
+               </iframe>
+
+           </div>
+
+       </div>
 
 
     </div>
 
+<script>
 
+function openCV() {
+    document.getElementById("cvModal").style.display = "flex";
+}
+
+
+function closeCV() {
+    document.getElementById("cvModal").style.display = "none";
+}
+
+
+</script>
 </body>
 </html>
