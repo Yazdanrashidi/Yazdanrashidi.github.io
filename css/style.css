@@ -22,9 +22,9 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 .line {
-    width: 500px;
+    width: 700px;
     max-width: 80%;
-    height: 2px;
+    height: 4px;
     background: white;
     margin: 20px 0;
 }
