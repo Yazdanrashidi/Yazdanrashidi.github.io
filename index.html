@@ -2,18 +2,24 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Homepage</title>
+    <title>Yazdan Rashidi</title>
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <!-- Your CSS -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
@@ -21,21 +27,34 @@
 <body>
 
 
-    <div class="hero">
-
-        <div class="line"></div>
-
-        <h1>YAZDAN RASHIDI</h1>
-
-        <p>Ph.D. in Biophysics</p>
-        <p>Postdoctoral Research Fellow at the Universität des Saarlandes</p>
-
-        <div class="line"></div>
+<div class="hero">
 
 
-        <!-- CV Button -->
+    <div class="line"></div>
+
+
+    <h1>YAZDAN RASHIDI</h1>
+
+
+    <p>Ph.D. in Biophysics</p>
+
+    <p>Postdoctoral Research Fellow at the Universität des Saarlandes</p>
+
+
+    <div class="line"></div>
+
+
+
+    <div class="buttons">
+
+
         <button class="cv-button" onclick="openCV()">
             CV
+        </button>
+
+
+        <button class="cv-button" onclick="openAbout()">
+            About Me
         </button>
 
 
@@ -43,52 +62,172 @@
 
 
 
-    <!-- CV Popup -->
-    <div id="cvModal" class="cv-modal">
-
-        <div class="cv-box">
-
-            <button class="close-button" onclick="closeCV()">
-                ✕
-            </button>
+</div>
 
 
-            <iframe 
-                src="documents/CV_YazdanRashidi.pdf">
-            </iframe>
+
+
+
+<!-- ================= CV POPUP ================= -->
+
+
+<div id="cvModal" class="cv-modal">
+
+
+    <div class="cv-box">
+
+
+        <button class="close-button" onclick="closeCV()">
+            ✕
+        </button>
+
+
+        <iframe src="documents/CV_YazdanRashidi.pdf"></iframe>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- ================= ABOUT ME POPUP ================= -->
+
+
+<div id="aboutModal" class="cv-modal">
+
+
+    <div class="about-box">
+
+
+        <button class="close-button" onclick="closeAbout()">
+            ✕
+        </button>
+
+
+
+        <img 
+        src="imges/Capture.PNG"
+        class="profile-image"
+        alt="Yazdan Rashidi">
+
+
+
+        <div class="about-text">
+
+
+            <p>
+                Welcome to my homepage!
+            </p>
+
+
+            <p>
+                I am a Postdoctoral Research Fellow at Saarland University
+                (Universität des Saarlandes) and earned my PhD from Saarland University in 2023.
+            </p>
+
+
+            <p>
+                I am a physicist specializing in soft matter and microfluidics,
+                with a research focus on red blood cell dynamics and biophysical systems.
+                My expertise includes optical microscopy techniques such as fluorescence,
+                widefield, and digital holographic microscopy, as well as image processing,
+                particle tracking, and quantitative data analysis.
+            </p>
+
+
+            <p>
+                I am passionate about combining experimental physics,
+                computational analysis, and interdisciplinary collaboration
+                to investigate complex biological and soft matter phenomena.
+            </p>
 
 
         </div>
 
+
+
     </div>
+
+
+</div>
+
+
+
 
 
 
 
 <script>
 
+
 function openCV() {
+
     document.getElementById("cvModal").style.display = "flex";
+
 }
+
 
 
 function closeCV() {
+
     document.getElementById("cvModal").style.display = "none";
+
 }
 
 
-// Close popup when clicking outside the CV box
+
+
+function openAbout() {
+
+    document.getElementById("aboutModal").style.display = "flex";
+
+}
+
+
+
+function closeAbout() {
+
+    document.getElementById("aboutModal").style.display = "none";
+
+}
+
+
+
+
+// Close popup by clicking outside
+
 window.onclick = function(event) {
 
-    let modal = document.getElementById("cvModal");
 
-    if (event.target == modal) {
-        modal.style.display = "none";
+    let cv = document.getElementById("cvModal");
+
+    let about = document.getElementById("aboutModal");
+
+
+    if(event.target == cv){
+
+        cv.style.display = "none";
+
     }
+
+
+    if(event.target == about){
+
+        about.style.display = "none";
+
+    }
+
 
 }
 
+
+
 </script>
+
 
 
 </body>
