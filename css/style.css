@@ -6,18 +6,4 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.center-box {
-    text-align: center;
-    color: white;
-}
-
-.center-box h1 {
-    font-size: 60px;
-    letter-spacing: 8px;
 }
