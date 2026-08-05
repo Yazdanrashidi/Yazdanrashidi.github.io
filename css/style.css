@@ -44,31 +44,77 @@ p {
 }
 /* Add the button styles below this point */
 
-.cv-container {
-    width: 90%;
-    max-width: 1000px;
-    height: 900px;
-    margin: 50px auto;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+/* CV button */
+.cv-button {
+    padding: 12px 35px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-.cv-container iframe {
+
+/* Background overlay */
+.cv-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
     width: 100%;
     height: 100%;
+
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* PDF window */
+.cv-box {
+
+    width: 85%;
+    height: 90%;
+
+    background: white;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* PDF viewer */
+.cv-box iframe {
+
+    width: 100%;
+    height: 100%;
+
     border: none;
 }
 
 
-.cv-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 35px;
-    text-decoration: none;
-}
+/* Close button */
+.close-button {
 
-.cv-button:hover {
-    background-color: white;
-    color: black;
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    z-index: 10;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 20px;
 }
