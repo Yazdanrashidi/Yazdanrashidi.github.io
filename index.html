@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Homepage</title>
 
     <!-- Google Fonts -->
@@ -12,10 +14,15 @@
 
     <!-- Your CSS -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-    
+
+
 <body>
+
+
     <div class="hero">
+
         <div class="line"></div>
 
         <h1>YAZDAN RASHIDI</h1>
@@ -24,32 +31,39 @@
         <p>Postdoctoral Research Fellow at the Universität des Saarlandes</p>
 
         <div class="line"></div>
-        
-       <!-- CV Button -->
-       <button class="cv-button" onclick="openCV()">
+
+
+        <!-- CV Button -->
+        <button class="cv-button" onclick="openCV()">
             CV
-       </button>
-
-
-       <!-- CV Popup -->
-       <div id="cvModal" class="cv-modal">
-
-           <div class="cv-box">
-
-               <button class="close-button" onclick="closeCV()">
-                    ✕
-               </button>
-
-               <iframe 
-                  src="documents/CV_YazdanRashidi.pdf">
-               </iframe>
-
-           </div>
-
-       </div>
+        </button>
 
 
     </div>
+
+
+
+    <!-- CV Popup -->
+    <div id="cvModal" class="cv-modal">
+
+        <div class="cv-box">
+
+            <button class="close-button" onclick="closeCV()">
+                ✕
+            </button>
+
+
+            <iframe 
+                src="documents/CV_YazdanRashidi.pdf">
+            </iframe>
+
+
+        </div>
+
+    </div>
+
+
+
 
 <script>
 
@@ -63,6 +77,20 @@ function closeCV() {
 }
 
 
+// Close popup when clicking outside the CV box
+window.onclick = function(event) {
+
+    let modal = document.getElementById("cvModal");
+
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+
+}
+
 </script>
+
+
 </body>
+
 </html>
